@@ -9,7 +9,13 @@ const vm = new Vue({
      
       .then(response => {this.info = response.data})
 
+    },
+    computed: {
+      filteredList() {
+        return info.filter(info => {
+          return common_name.toLowerCase().includes(this.search.toLowerCase())
+        })
+      }
     }
-    
-  
+   
   });

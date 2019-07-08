@@ -4,22 +4,26 @@
     font-family: 'Open Sans', sans-serif;
 }
 body{
-    border:solid #deb887 thick;
-    background-color:rgb(105, 241, 214)!important;
+    
+    background-color:forestgreen!important;
+    background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=c7c7c700&noise=626262&density=93&opacity=74');
     background-repeat: no-repeat;
     background-size: cover;
 }
 .header{
-    background-color:#E0FFF9!important;
-    border-radius: 10px;
-    height:100px;
+    background-color:#f7f7f7!important;
+    background-color:forestgreen!important;
+
+   
+    height:5%!important;
 }
 h1,h2,h3,h4,h5,h6{
     font-family: 'Maitree', serif!important;
     font-weight: 700!important;
 }
 .card{
-    background-color:#f7f7f7;
+    
+    background-color:#ffffff50!important;
     max-height:max-content;
     border-radius: 5px;
 }
@@ -34,6 +38,10 @@ h1:hover:after{
 content: '\1F342';
 display: inline-block;
 margin-right:10px;
+
+}
+h3.searchcrit{
+    padding-top:25px!important;
 
 }
 .plant-type, .family-name, .water-needs, .associated-wildlife, .ssc{
@@ -53,17 +61,19 @@ margin-right:10px;
     position: absolute;
     height: 100%;
     width: 100%;
+  
   }
   
   
   .sidebar-item {
       
       position: absolute;
-      top: 10;
-      left: 0;
-      width: 100%;
+      top: 70;
+      left: 15;
+      width: 75%;
       height: 100%;
-      background-color:#E0FFF9!important;
+      background-color:#f7f7f750!important;
+      border-radius: 5px;
 
      
 
@@ -88,7 +98,7 @@ font-weight: 700;
   }
 
 .p-color1{
-color:forestgreen;
+color:darkgreen;
 
 }
 .p-color2{
@@ -110,3 +120,16 @@ color:forestgreen;
       background-color:burlywood!important;
       float:right;
   }
+  .logo{
+      height:100px;
+      widht:auto;
+  }
+  .navbar-dark{
+      background-color: darkgreen!important;
+  }
+  .fa-leaf{
+    float:right;
+    font-size:2em;
+    color:rgb(252, 206, 0);
+  }
+  

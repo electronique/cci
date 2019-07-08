@@ -9,67 +9,87 @@
     <body>
         
 <div id="app">
-    <div class="container p-3">
+    <div class="container-fluid p-0">
+ <nav class="navbar navbar-expand-lg navbar-dark">
+     
+     <img  class='logo' src='285px-Bureau_of_Plant_Industry_(BPI).svg.png'>
+     <a class="navbar-brand" href="#"><h2 class="pl-3">Plant Finder</h2></a>
+     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+         aria-expanded="false" aria-label="Toggle navigation"></button>
+     <div class="collapse navbar-collapse" id="collapsibleNavId">
+         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+             <li class="nav-item active">
+                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" href="#">Link</a>
+             </li>
+         </ul>
+         <form class="form-inline my-2 my-lg-0">
+             <input class="form-control mr-sm-2" type="text" v-model="search"  placeholder="Search">
+             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+         </form>
+     </div>
+ </nav>
     <div class='row-fluid bg-light'>
-        <div class=" header col-12">
+        <div class="header text-white col-12">
 
-    <h1>Plant Finder</h1>
-    <small> data from San Francisco Plant Finder Data  </small><br>
-    <small>https://data.sfgov.org/Energy-and-Environment/San-Francisco-Plant-Finder-Data/vmnk-skih</small>
+    
     <hr>
+    <h6> Sort by different critera and scroll through database to find plants of interest.</h6>
     </div>
     </div>
     </div>
-    <div class='container'>
-           
-        
-        
-        
+    <div class='container-fluid'>  
     <div class="row">
         <div class='sidebar col-4'>
-
-                <div class="sidebar-item">
+                <h3 class='text-white align-bottom searchcrit'>Search Criteria</h3>
+                
+                <div class="sidebar-item ">
                         <div class="make-me-sticky">
-                                <label class='p-color1'>Latin Name: </label>
+                                <label class=''>Latin Name: </label>
                                 <input class="check1" type="checkbox"  onclick="myfunction1()"><br>
-                                <label class='p-color2'>Plant Type:</label>
+                                <label class=''>Plant Type:</label>
                                 <input class="check2" type="checkbox"  onclick="myfunction2()"><br>
-                                <label class='p-color3'>Family Name:</label>
+                                <label class=''>Family Name:</label>
                                 <input class="check3" type="checkbox"  onclick="myfunction3()"><br>
-                                <label class='p-color4'>Water Needs:</label>
+                                <label class=''>Water Needs:</label>
                                 <input class="check4" type="checkbox"  onclick="myfunction4()"><br>
-                                 <label class='p-color5'>Associated Wildlife:</label>
+                                 <label class=''>Associated Wildlife:</label>
                                 <input class="check5" type="checkbox"  onclick="myfunction5()"><br>
-                                <label class='p-color1'>Suitable Site Conditions:</label>
+                                <label class=''>Suitable Site Conditions:</label>
                                 <input class="check6" type="checkbox" onclick="myfunction6()"><br>
-                                <label class='p-color2'>Bloom Time:</label>
+                                <label class=''>Bloom Time:</label>
                                 <input class="check7" type="checkbox"  onclick="myfunction7()"><br>
-                                <label class='p-color3'>Flower Color:</label>
+                                <label class=''>Flower Color:</label>
                                 <input class="check8" type="checkbox"  onclick="myfunction8()"><br>
-                                <label class='p-color4'>Size at Maturity:</label>
+                                <label class=''>Size at Maturity:</label>
                                 <input class="check9" type="checkbox"  onclick="myfunction9()"><br>
-                                 <label class='p-color5'>Climate Appropriate Plants:</label>
+                                 <label class=''>Climate Appropriate Plants:</label>
                                 <input class="check10" type="checkbox"  onclick="myfunction10()"><br>
-                                <label class='p-color1'>Soil Type:</label>
+                                <label class=''>Soil Type:</label>
                                 <input class="check12" type="checkbox" onclick="myfunction12()"><br>
-                                <label class='p-color2'>Pruning Needs</label>
+                                <label class=''>Pruning Needs</label>
                                 <input class="check13" type="checkbox"  onclick="myfunction13()"><br>
-                                <label class='p-color3'>Habitat Value: </label>
+                                <label class=''>Habitat Value: </label>
                                 <input class="check14" type="checkbox"  onclick="myfunction14()"><br>
-                                <label class='p-color4'>Storm Water Benefit: </label>
+                                <label class=''>Storm Water Benefit: </label>
                                 <input class="check15" type="checkbox"  onclick="myfunction15()"><br>
-                                 <label class='p-color5'>Appropriate Location:</label>
+                                 <label class=''>Appropriate Location:</label>
                                 <input class="check16" type="checkbox"  onclick="myfunction16()"><br>
-                                <label class='p-color1'>Nurseries:</label>
+                                <label class=''>Nurseries:</label>
                                 <input class="check17" type="checkbox" onclick="myfunction17()"><br>
                         </div>
                       </div>
            
         </div>
-        <div class='col-8'>
-            <div class="card px-2" v-for="info in info">
+        <div class='col-lg-6 py-4'>
+            <h3 class='text-white'>Plant names</h3>
+            <div class="card" v-for="info in info">
+                  
                     <div class="card-body ">
-                      <h2 class="card-title">{{info.common_name}}</h2>
+                            
+                      <h4 class="card-title d-inline-block">{{info.common_name}}</h4><i d-inline-block pl-4 class="fas fa-leaf"></i>
                       <hr>
                      <h6 class="latin-name p-color1">Latin Name: {{info.latin_name}}</h6>
                      <h6 class="plant-type p-color1">Plant Type: {{info.plant_type}}</h6>
@@ -88,6 +108,7 @@
                      <h6 class="stormwater p-color4">Stormwater Benefit: {{info.stormwater_benefit}}</h6>
                      <h6 class="al p-color5">Appropriate Location: {{info.appropriate_location}}</h6>
                      <h6 class="nurseries p-color1">Nurseries: {{info.nurseries}}</h6>
+                     
 
                     </div>
             </div>
@@ -97,6 +118,8 @@
     </div>
 
 </div>
+
+
           
 <script src="index.js"></script>
   <script src="hideshow.js"></script>
